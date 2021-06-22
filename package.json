@@ -7,11 +7,13 @@
     "bcrypt": "^5.0.1",
     "connect-session-sequelize": "^7.1.1",
     "dotenv": "^10.0.0",
+    "easy": "^12.0.9",
     "express": "^4.17.1",
     "express-handlebars": "^5.3.2",
     "express-session": "^1.17.2",
     "mysql2": "^2.2.5",
-    "sequelize": "^6.6.2"
+    "sequelize": "^6.6.2",
+    "webcam": "^3.2.1"
   },
   "devDependencies": {},
   "scripts": {
