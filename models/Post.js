@@ -33,10 +33,10 @@ Post.init(
       allowNull: false,
     },
     quality: {
-      type: DataTypes.STRING,
+      type: DataTypes.INTEGER,
       validate: {
         //number needs to be between 1-5
-        len: [5],
+        len: [1,5],
       },
       allowNull: false,
     },
