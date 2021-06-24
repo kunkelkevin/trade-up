@@ -1,41 +1,72 @@
-<!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Trade Up</title>
-    <link rel="stylesheet" href="/stylesheets/style.css">
-</head>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Just Tech News</title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  </head>
 
-<body>
-    <div class="wrapper">
-        <header>
-            <h1>
-                <a href="/">Trade UP</a>
-            </h1>
-            <nav>
-                {{#if loggedIn}}
-                <button id="logout" class="btn-no-style">logout</button>
-                {{else}}
-                <a href="/login">login</a>
-                {{/if}}
-            </nav>
-        </header>
-        <main>
-            <div class="bg"></div>
-            <div class="bg bg2"></div>
-            <div class="bg bg3"></div>
-            {{{ body }}}
-        </main>
-        <footer>
-            Happy Trading!
-        </footer>
+  <body>
+    <div class="wrapper row">
+      <header>
+        <h1 class="column" id="Trade-Up">
+          <a href="/">Trade up</a>
+          </h1>
+          <div class="column">
+          <img
+            src="https://pixelartmaker-data-78746291193.nyc3.digitaloceanspaces.com/image/56a259f1dae787c.png"
+            class="rotate"
+            width="100"
+            height="100"
+          />
+
+          <img
+            src="https://i.imgur.com/kDDFvUp.png"
+            class="rotate"
+            width="100"
+            height="100"
+          />
+
+          <img
+            src="https://pixelartmaker-data-78746291193.nyc3.digitaloceanspaces.com/image/c633982ef855076.png"
+            class="rotate"
+            width="100"
+            height="100"
+          />
+          </div>
+        <nav class="column">
+          {{#if loggedIn}}
+            <a href="/dashboard">dashboard</a>
+            <button id="logout" class="btn-no-style">logout</button>
+          {{else}}
+            <a href="/login">login</a>
+          {{/if}}
+        </nav>
+      </header>
+      <main class="post-background">
+        <div class="bg"></div>
+        <div class="bg bg2"></div>
+        <div class="bg bg3"></div>
+           <form name="Console" id="console-home" action="/action_page.php">
+     Consoles: <select name="Consoles" id="Consoles">
+                    <option value="" selected="selected">Xbox</option>
+                    <option value="" selected="selected">Playstaytion</option>
+                    <option value="" selected="selected">Nintendo Switch</option>
+                    <option value="" selected="selected">Retro</option>
+                </select>
+        {{{body}}}
+      </main>
+      <footer>
+        Happy Trading!
+      </footer>
     </div>
 
     {{#if loggedIn}}
-    <script src="/javascript/logout.js"></script>
+      <script src="/javascript/logout.js"></script>
     {{/if}}
-</body>
+  </body>
 
 </html>
