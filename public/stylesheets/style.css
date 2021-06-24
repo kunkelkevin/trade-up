@@ -256,20 +256,20 @@
     background-color: #1f9c13;
   }
   
-  .comment-form {
+  .offer-form {
     margin-bottom: 5%;
   }
   
-  .comment {
+  .offer {
     padding: 1%;
     margin-bottom: 1%;
   }
   
-  .comment:nth-child(odd) {
+  .offer:nth-child(odd) {
     background-color: #fff5eb;
   }
   
-  .comment .meta {
+  .offer .meta {
     font-size: 90%;
     font-family: 'Righteous', cursive;
     margin-bottom: .5%;
