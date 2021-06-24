@@ -1,19 +1,12 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-// create our User model
+// create User model
 class User extends Model {}
 
-// define table columns and configuration
+// define table columns
 User.init(
   {
-    type: DataTypes.INTEGER,
-    allowNull: false,
-    //Primary Key
-    primaryKey: true,
-
-    autoIncrement: true
-  },
   //id column
   id: {
     type: DataTypes.INTEGER,
@@ -54,17 +47,6 @@ User.init(
   underscored: true,
   modelName: 'user'
 }
-);
-
-    //sequelize connection 
-    sequelize,
-    // don't automatically create createdAt/updatedAt timestamp fields
-    //timestamps: false,
-    // use underscores instead of camel-casing 
-    underscored: true,
-    //model name stays lowercase in the database
-    modelName: 'user'
-  }
 );
 
 module.exports = User;
