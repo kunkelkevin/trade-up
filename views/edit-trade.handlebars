@@ -1,0 +1,33 @@
+<article>
+  <a href="/dashboard"> &larr; Back to dashboard</a>
+  <h2>
+    Edit Trade
+  </h2>
+  <form class="edit-post-form">
+    <div>
+      <input name="post-title" type="text" value="{{post.title}}" />
+      <span>({{format_url post.post_url}})</span>
+    </div>
+    <div>
+      <a href="/post/{{offer.id}}">{{offer.comments.length}} {{format_plural "offer" post.offer.length}}</a>
+    </div>
+    <button type="submit">Save Trade</button>
+    <button type="button" class="delete-post-btn">Delete Trade</button>
+  </form>
+</article>
+
+<form class="comment-form">
+  <div>
+    <textarea name="comment-body"></textarea>
+  </div>
+
+  <div>
+    <button type="submit">add Trade comment</button>
+  </div>
+</form>
+
+{{> trade post.trade}}
+
+<script src="/javascript/edit-post.js"></script>
+<script src="/javascript/delete-post.js"></script>
+<script src="/javascript/comment.js"></script>
