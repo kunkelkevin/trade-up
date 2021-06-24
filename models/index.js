@@ -26,7 +26,6 @@ Comment.belongsTo(Offer, {
 
 User.hasMany(Comment, {
   foreignKey: "user_id",
-  onDelete: "SET NULL",
 });
 
 Offer.hasMany(Comment, {
@@ -45,7 +44,6 @@ Offer.belongsTo(Post, {
 
 User.hasMany(Offer, {
   foreignKey: "user_id",
-  onDelete: "SET NULL",
 });
 
 Post.hasMany(Offer, {
