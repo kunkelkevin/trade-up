@@ -1,0 +1,12 @@
+<div class="offer">
+  {{#each this}}
+  <section class="offer">
+    <div class="meta">
+      {{user.username}} on {{format_date created_at}}
+    </div>
+    <div class="text">
+      {{offer_text}}
+    </div>
+  </section>
+  {{/each}}
+</div>
