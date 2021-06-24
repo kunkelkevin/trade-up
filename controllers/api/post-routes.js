@@ -7,9 +7,7 @@ const withAuth = require("../../utils/auth");
 router.get('/', (req, res) => {
     console.log('======================');
     Post.findAll({
-      attributes: ['id', 'console_type', 'pic_link', 'title', 'post_url', 'created_at',
-        // [sequelize.literal('(SELECT COUNT(*) FROM vote WHERE post.id = vote.post_id)'), 'vote_count']
-      ],
+      attributes: ['id', 'description', 'console_type', 'pic_link', 'title', 'created_at'],
       order: [['created_at', 'DESC']],
       include: [
         {
@@ -40,23 +38,28 @@ router.get('/:id', (req, res) => {
         id: req.params.id
       },
       attributes: ['id', 'console_type', 'pic_link', 'title', 'post_url', 'created_at',
-        // [sequelize.literal('(SELECT COUNT(*) FROM vote WHERE post.id = vote.post_id)'), 'vote_count']
     ],
-      include: [
+    include: [
+      {
+        model: Post,
+        attributes: ['id', 'console_type', 'pic_link', 'title', 'post_url', 'created_at']
+      },
+      {
+        model: Offer,
+        attributes: ['id', 'description', 'user_id', 'post_id', 'accepted'],
+        include: [
         {
-          model: Comment,
-          attributes: ['id', 'comment_text', 'post_id', 'user_id', 'created_at'],
-          include: {
-            model: User,
-            attributes: ['username']
-          }
+          model: Post,
+          attributes: ['title']
         },
         {
-          model: User,
-          attributes: ['username']
+          model: Comment,
+          attributes:['id', 'comment_text', 'user_id', 'offer_id']
         }
       ]
-    })
+      },
+    ]
+  })
       .then(dbPostData => {
         if (!dbPostData) {
           res.status(404).json({ message: 'No post found with this id' });
@@ -76,7 +79,7 @@ router.post('/', withAuth, (req, res) => {
     pic_link: req.body.pic_link,
     title: req.body.title,
     description: req.body.description,
-    user_id: req.body.user_id
+    user_id: req.session.user_id
   })
     .then(dbPostData => res.json(dbPostData))
     .catch(err => {
@@ -86,7 +89,7 @@ router.post('/', withAuth, (req, res) => {
 });
 
 //put by id
-router.put('/:id',withAuth, (req, res) => {
+router.put('/:id', withAuth, (req, res) => {
     Post.update(
       {
         title: req.body.title

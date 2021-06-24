@@ -27,18 +27,18 @@ router.get('/:id', (req, res) => {
         },
         {
           model: Offer,
-          attributes: ['id', 'pic_link', 'description', 'user_id', 'post_id', 'accepted'],
-          include: {
+          attributes: ['id', 'description', 'user_id', 'post_id', 'accepted'],
+          include: [
+          {
             model: Post,
             attributes: ['title']
+          },
+          {
+            model: Comment,
+            attributes:['id', 'comment_text', 'user_id', 'offer_id']
           }
+        ]
         },
-    //     {
-    //       model: Post,
-    //       attributes: ['title'],
-    //       through:
-    //       as:
-    //     }
       ]
     })
       .then(dbUserData => {
