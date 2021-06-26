@@ -11,10 +11,10 @@ router.get("/", (req, res) => {
     });
 });
 
-router.post("/", (req, res) => {
+router.post("/", withAuth, (req, res) => {
   Offer.create({
     description: req.body.description,
-    user_id: 1,
+    user_id: req.session.user_id,
     post_id: req.body.post_id,
   })
     .then((dbOfferData) => res.json(dbOfferData))

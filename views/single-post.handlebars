@@ -1,7 +1,13 @@
 {{> post-info post}}
 
 {{#if loggedIn}}
-{{#if noOffer}}
+{{#if offerMade}}
+<div>
+<h2>My Offers</h2>
+</div>
+{{offer.description}}
+{{> comments offer.comments}}
+{{else}}
 <div>
 <h2>Create Offer</h2>
 </div>
@@ -25,16 +31,13 @@
     <button type="submit">add trade</button>
   </div>
 </form> --}}
+{{!-- {{/if}} --}}
 {{/if}}
 {{/if}}
 
-{{#if offer}}
-<div>
-<h2>My Offers</h2>
-</div>
 
 {{> comments post.comments}}
 
-{{#if loggedIn}}
+{{!-- {{#if loggedIn}}
 <script src="/javascript/comment.js"></script>
-{{/if}}
+{{/if}} --}}

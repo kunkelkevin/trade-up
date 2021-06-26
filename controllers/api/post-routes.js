@@ -101,14 +101,14 @@ router.get("/:id", (req, res) => {
 });
 
 //post - pic link, title, description, user_id
-router.post("/", (req, res) => {
+router.post("/", withAuth, (req, res) => {
   Post.create({
     pic_link: req.body.pic_link,
     title: req.body.title,
     console_type: req.body.console_type,
     quality: req.body.quality,
     description: req.body.description,
-    user_id: 1,
+    user_id: req.session.user_id,
   })
     .then((dbPostData) => res.json(dbPostData))
     .catch((err) => {
