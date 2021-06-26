@@ -306,3 +306,40 @@ footer {
   font-family: 'Righteous', cursive;;
   font-weight: bold;
 }
+
+/* post page */
+.container {
+  box-sizing: border-box;
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+  vertical-align: middle;
+  font-weight: bold;
+  font-family: 'Righteous', cursive;;
+  max-width: 100%;
+  border: .5px solid black;
+  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+  background-color: whitesmoke;
+  
+}
+
+.system {
+  max-width: 100%;
+  max-height: 100%;
+  font-size: large;
+  margin-left: 8px;
+}
+
+.quality {
+  margin-right: 12px;
+}
+
+img {
+  max-height: 50%;
+  max-width: 50%;
+}
+
+.trade-img {
+  max-width: 20%;
+  max-height: 20%;
+}

@@ -1,23 +1,24 @@
-<article class="post containter">
-  <a href="/post/{{id}}">
-    <div class="system">
+<article class="post">
+  <div class="container">
+    <div class="system" id="post-system">
       <span>{{console_type}}</Span>
     </div>
     <div class="trade-img">
-        <script type="text/x-handlebars-template">
-          <img class="tradePic" src="/img/{{pic_link}}">
-        </script> 
+          <img class="tradePic" src="/img/test.jpg"> 
     </div>
+    <a href="/post/{{id}}">
     <div class = "description">
       <p> {{title}}</p>
       <p> {{description}}</p>
     </div>
+    </a>
     <div class = "quality">
       <P>{{quality}}</P>
-      </a>
+    </div>
     {{!-- </div>
    <div class="meta">
     <a href="/comment/{{id}}">{{comment.length}} {{format_plural "comment" comment-body.length}}</a>
   </div>
     </div> --}}
+    </div>
   </article>
