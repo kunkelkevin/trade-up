@@ -34,6 +34,24 @@
 {{!-- {{/if}} --}}
 {{/if}}
 {{/if}}
+{{#if loggedIn}}
+<div class="my-offer">
+  <h2>
+    My Offers
+  </h2>
+</div>
+<section>
+  <a href="/single-dashboard">
+    <ol>
+    {{#each offer as |offer|}}
+    <li>
+      {{> post-info post}}
+    </li>
+    {{/each}}
+  </ol>
+  </a>
+</section>
+{{/if}}
 
 
 
