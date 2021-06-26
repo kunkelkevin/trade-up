@@ -1,0 +1,30 @@
+{{#if posts.length}}
+<section>
+  <h2>My Trades</h2>
+  <ol>
+    {{#each posts as |post|}}
+    <li>
+      {{> post-info post}}
+    </li>
+    {{/each}}
+  </ol>
+</section>
+{{/if}}
+<div>
+<button type="submit" class="btn">Add New Trade</button>
+</div>
+
+{{#if posts.length}}
+<section>
+  <h2>My Offers</h2>
+  <ol>
+    {{#each posts as |post|}}
+    <li>
+      {{> post-info post}}
+    </li>
+    {{/each}}
+  </ol>
+</section>
+{{/if}}
+
+<script src="/javascript/add-post.js"></script>

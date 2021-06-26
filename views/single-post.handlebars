@@ -1,0 +1,40 @@
+{{> post-info post}}
+
+{{#if loggedIn}}
+{{#if noOffer}}
+<div>
+<h2>Create Offer</h2>
+</div>
+
+<form class="comment-form">
+  <div>
+    <textarea name="trade-body"></textarea>
+  </div>
+
+   <div>
+    <button type="submit">submit offer</button>
+  </div>
+</form>
+
+  {{!-- <form class="comment-form">
+  <div>
+    <textarea name="comment-body"></textarea>
+  </div>
+
+  <div>
+    <button type="submit">add trade</button>
+  </div>
+</form> --}}
+{{/if}}
+{{/if}}
+
+{{#if offer}}
+<div>
+<h2>My Offers</h2>
+</div>
+
+{{> comments post.comments}}
+
+{{#if loggedIn}}
+<script src="/javascript/comment.js"></script>
+{{/if}}

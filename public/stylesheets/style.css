@@ -1,298 +1,308 @@
 * {
-    box-sizing: border-box;
-   
-  }  
-    body {
-      height:100%;
-      margin:0;
-    }
-    
-    .bg {
-      animation:slide 6s ease-in-out infinite alternate;
-      background-image: linear-gradient(-60deg, #6c3 50%, #09f 50%);
-      bottom:0;
-      left:-50%;
-      opacity:.5;
-      position:fixed;
-      right:-50%;
-      top:0;
-      z-index:-1;
-    }
-    
-    #myFile {
-      background-color: white;
-      border: 1px solid black;
-    }
-
-    #post-title {
-      border: 1px solid black;
-    }
-
-    #description-box {
-      border: 1px solid black;
-    }
-
-    #img-submit {
-      width: 10%;
-      border: 1px solid black;
-    }
-
-    .bg2 {
-      animation-direction:alternate-reverse;
-      animation-duration:7s;
-    }
-    
-    .bg3 {
-      animation-duration:8s;
-    }
-    
-    .content {
-      background-color:rgba(255,255,255,.8);
-      border-radius:.25em;
-      box-shadow:0 0 .25em rgba(0,0,0,.25);
-      box-sizing:border-box;
-      left:50%;
-      padding:10vmin;
-      position:fixed;
-      text-align:center;
-      top:50%;
-      transform:translate(-50%, -50%);
-    }
-  
-  @keyframes slide {
-    0% {
-      transform:translateX(-25%);
-    }
-    100% {
-      transform:translateX(25%);
-    }
-  }
-
-  .rotate {
-    animation: rotation 8s infinite linear;
+  box-sizing: border-box;
+ 
+}  
+  body {
+    height:100%;
+    margin:0;
   }
   
-  @keyframes rotation {
-    from {
-      transform: rotate(0deg);
-    }
-    to {
-      transform: rotate(359deg);
-    }
+  .bg {
+    animation:slide 6s ease-in-out infinite alternate;
+    background-image: linear-gradient(-60deg, #6c3 50%, #09f 50%);
+    bottom:0;
+    left:-50%;
+    opacity:.5;
+    position:fixed;
+    right:-50%;
+    top:0;
+    z-index:-1;
   }
   
-  header.img {
-    align-items: center;
-  }
-  
-  
-  body, html {
-    height: 100%;
-    padding: 0;
-    margin: 0;
-    font-family: sans-serif;
-    color: #333;
-  }
-  a {
-    text-decoration: none;
-    color: black;
-    font-weight: bold;
-    transition: color .1s;
-    font-family: 'Righteous', cursive;
-    font-size: 16px;
-  }
-  
-  a:hover {
-    color: darkblue;
-  }
-  
-  #trade-up {
+  #myFile {
+    background-color: white;
     border: 1px solid black;
-    padding: 5px;
-    box-shadow: blue 0px 0px 0px 2px inset, rgb(255, 255, 255) 10px -10px 0px -3px, rgb(31, 193, 27) 10px -10px, rgb(255, 255, 255) 20px -20px 0px -3px, rgb(255, 217, 19) 20px -20px, rgb(255, 255, 255) 30px -30px 0px -3px, rgb(255, 156, 85) 30px -30px, rgb(255, 255, 255) 40px -40px 0px -3px, rgb(255, 85, 85) 40px -40px;
   }
 
-  #console-home {
-    font-weight: bold;
-    font-family: 'Righteous', cursive;
-  }
-  button {
-    background-color: #225ca3;
-    border: 0;
-    padding: 1%;
-    color: white;
-    font-weight: bold;
-    transition: background-color .1s;
-    cursor: pointer;
-    border-radius: 5px;
-  }
-  
-  button:hover {
-    background-color: #3486eb;
-  }
-  
-  .post-list {
-    margin: 0;
-    padding: 0;
-  }
-  
-  textarea, input {
-    padding: .5%;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-  }
-  
-  textarea:focus, input:focus {
-    outline: none;
-    border: 1px solid #3486eb;
-  }
-  
-  textarea {
-    min-width: 40%;
-    min-height: 100px;
-  }
-  
-  form > div {
-    margin-bottom: 2%;
-  }
-  
-  form label {
-    display: block;
-  }
-  
-  .wrapper {
-    width: 100%;
-    min-height: 100%;
-    max-width: 1200px;
-    line-height: 60px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-  }
-  
-  header {
-    border-bottom: 1px solid black;
-    border-right: 1px solid black;
-    border-left: 1px solid black;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 1%;
-    background-color: rgba(255, 255, 255, 0.658);
-  }
-  
-  header h1 {
-    font-size: 1em;
-  }
-  
-  main {
-    flex: 1;
-    padding: 2% 4%;
-  }
-  
-  .btn-no-style {
-    background: none;
-    border: none;
-    padding: 0;
-    cursor: pointer;
-    text-decoration: none;
-    color: black;
-    font-size: 100%;
-    font-weight: bold;
-    transition: color .1s;
-    margin-left: 16px;
-  }
-  
-  .btn-no-style:hover {
-    background: none;
-    color: darkblue;
-  }
-  
-  .delete-post-btn {
-    background-color: #d41414;
-  }
-  
-  .delete-post-btn:hover {
-    background-color: #ff643d;
-  }
-  
-  .post-background {
-   background-color: rgba(255, 255, 255, 0.658);
-   border: 5px inset black;
-   margin-top: 50px;
-   margin-bottom: 50px;
-   box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+  #post-title {
+    border: 1px solid black;
   }
 
-  .post {
-    margin-bottom: 2%;
-    line-height: 150%;
+  #description-box {
+    border: 1px solid black;
   }
 
-  
-  .post .title span {
-    font-family: 'Righteous', cursive;
-    font-size: 90%;
-    color: #7d7d7d;
-    border-radius: 5px;
+  #img-submit {
+    width: 10%;
+    border: 1px solid black;
   }
 
+  .bg2 {
+    animation-direction:alternate-reverse;
+    animation-duration:7s;
+  }
   
-  .edit-link {
-    display: block;
-    margin: -1.5% 0 2% 0;
+  .bg3 {
+    animation-duration:8s;
+  }
+  
+  .content {
+    background-color:rgba(255,255,255,.8);
+    border-radius:.25em;
+    box-shadow:0 0 .25em rgba(0,0,0,.25);
+    box-sizing:border-box;
+    left:50%;
+    padding:10vmin;
+    position:fixed;
+    text-align:center;
+    top:50%;
+    transform:translate(-50%, -50%);
   }
 
-  .btn-no-style {
-    color: black;
+@keyframes slide {
+  0% {
+    transform:translateX(-25%);
   }
-  
-  .upvote-btn {
-    background-color: #197d0f;
-    transition: background-color .1s;
+  100% {
+    transform:translateX(25%);
   }
-  
-  .upvote-btn:hover {
-    background-color: #1f9c13;
-  }
-  
-  .offer-form {
-    margin-bottom: 5%;
-  }
-  
-  .offer {
-    padding: 1%;
-    margin-bottom: 1%;
-  }
-  
-  .offer:nth-child(odd) {
-    background-color: #fff5eb;
-  }
-  
-  .offer .meta {
-    font-size: 90%;
-    font-family: 'Righteous', cursive;
-    margin-bottom: .5%;
-    opacity: .6;
-  }
-  
-  .new-post-form input {
-    width: 300px;
-  }
-  
-  .edit-post-form {
-    margin-bottom: 5%;
-  }
-  
-  footer {
-    border-top: 1px solid black;
-    border-right: 1px solid black;
-    border-left: 1px solid black;
-    display: flex;
-    justify-content: center;
-    padding: 1%;
-    font-size: 200%;
-    font-family: 'Righteous', cursive;
-    background-color: rgba(255, 255, 255, 0.658);;
+}
 
+.rotate {
+  animation: rotation 8s infinite linear;
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
   }
+  to {
+    transform: rotate(359deg);
+  }
+}
+
+header.img {
+  align-items: center;
+}
+
+
+body, html {
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  font-family: sans-serif;
+  color: #333;
+}
+a {
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+  transition: color .1s;
+  font-family: 'Righteous', cursive;
+  font-size: 16px;
+}
+
+a:hover {
+  color: darkblue;
+}
+
+#trade-up {
+  border: 1px solid black;
+  padding: 5px;
+  box-shadow: blue 0px 0px 0px 2px inset, rgb(255, 255, 255) 10px -10px 0px -3px, rgb(31, 193, 27) 10px -10px, rgb(255, 255, 255) 20px -20px 0px -3px, rgb(255, 217, 19) 20px -20px, rgb(255, 255, 255) 30px -30px 0px -3px, rgb(255, 156, 85) 30px -30px, rgb(255, 255, 255) 40px -40px 0px -3px, rgb(255, 85, 85) 40px -40px;
+}
+
+#console-home {
+  font-weight: bold;
+  font-family: 'Righteous', cursive;
+}
+button {
+  background-color: #225ca3;
+  border: 0;
+  padding: 1%;
+  color: white;
+  font-weight: bold;
+  transition: background-color .1s;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+button:hover {
+  background-color: #3486eb;
+}
+
+.post-list {
+  margin: 0;
+  padding: 0;
+}
+
+textarea, input {
+  padding: .5%;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+textarea:focus, input:focus {
+  outline: none;
+  border: 1px solid #3486eb;
+}
+
+textarea {
+  min-width: 40%;
+  min-height: 100px;
+}
+
+form > div {
+  margin-bottom: 2%;
+}
+
+form label {
+  display: block;
+}
+
+.wrapper {
+  width: 100%;
+  min-height: 100%;
+  max-width: 1200px;
+  line-height: 60px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  border-bottom: 1px solid black;
+  border-right: 1px solid black;
+  border-left: 1px solid black;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1%;
+  background-color: rgba(255, 255, 255, 0.658);
+}
+
+header h1 {
+  font-size: 1em;
+}
+
+main {
+  flex: 1;
+  padding: 2% 4%;
+}
+
+.btn-no-style {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  text-decoration: none;
+  color: black;
+  font-size: 100%;
+  font-weight: bold;
+  transition: color .1s;
+  margin-left: 16px;
+}
+
+.btn-no-style:hover {
+  background: none;
+  color: darkblue;
+}
+
+.delete-post-btn {
+  background-color: #d41414;
+}
+
+.delete-post-btn:hover {
+  background-color: #ff643d;
+}
+
+.post-background {
+ background-color: rgba(255, 255, 255, 0.658);
+ border: 5px inset black;
+ margin-top: 50px;
+ margin-bottom: 50px;
+ box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+}
+
+.post {
+  margin-bottom: 2%;
+  line-height: 150%;
+}
+
+
+.post .title span {
+  font-family: 'Righteous', cursive;
+  font-size: 90%;
+  color: #7d7d7d;
+  border-radius: 5px;
+}
+
+
+.edit-link {
+  display: block;
+  margin: -1.5% 0 2% 0;
+}
+
+.btn-no-style {
+  color: black;
+}
+
+.upvote-btn {
+  background-color: #197d0f;
+  transition: background-color .1s;
+}
+
+.upvote-btn:hover {
+  background-color: #1f9c13;
+}
+
+.offer-form {
+  margin-bottom: 5%;
+}
+
+.offer {
+  padding: 1%;
+  margin-bottom: 1%;
+}
+
+.offer:nth-child(odd) {
+  background-color: #fff5eb;
+}
+
+.offer .meta {
+  font-size: 90%;
+  font-family: 'Righteous', cursive;
+  margin-bottom: .5%;
+  opacity: .6;
+}
+
+.new-post-form input {
+  width: 300px;
+}
+
+.edit-post-form {
+  margin-bottom: 5%;
+}
+
+footer {
+  border-top: 1px solid black;
+  border-right: 1px solid black;
+  border-left: 1px solid black;
+  display: flex;
+  justify-content: center;
+  padding: 1%;
+  font-size: 200%;
+  font-family: 'Righteous', cursive;
+  background-color: rgba(255, 255, 255, 0.658);;
+
+}
+
+.signup-form {
+  font-family: 'Righteous', cursive;;
+  font-weight: bold;
+}
+
+.login-form {
+  font-family: 'Righteous', cursive;;
+  font-weight: bold;
+}

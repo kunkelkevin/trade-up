@@ -1,0 +1,21 @@
+<article class="post containter">
+    <div class="system">
+      <span>{{console}}</Span>
+    </div>
+    <div class="trade-img">
+        <script type="text/x-handlebars-template">
+          <img class="tradePic" src="{{imgURL}}">
+        </script> 
+    </div>
+    <div class = "description">
+      <p> {{title}}</p>
+      <p> {{description}}</p>
+    </div>
+    <div class = "quality">
+      <P>{{quality}}</P>
+    </div>
+   <div class="meta">
+    <a href="/comment/{{id}}">{{comment.length}} {{format_plural "comment" comment-body.length}}</a>
+  </div>
+    </div>
+  </article>
