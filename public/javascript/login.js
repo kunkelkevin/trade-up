@@ -16,5 +16,3 @@ async function login() {
   }
   
   document.querySelector('#login').addEventListener('click', login);
-
-
