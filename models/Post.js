@@ -20,9 +20,6 @@ Post.init(
     pic_link: {
       type: DataTypes.STRING,
       allowNull: false,
-      validate: {
-        isURL: true,
-      },
     },
     title: {
       type: DataTypes.STRING,
@@ -36,7 +33,7 @@ Post.init(
       type: DataTypes.INTEGER,
       validate: {
         //number needs to be between 1-5
-        len: [1,5],
+        len: [1, 5],
       },
       allowNull: false,
     },
