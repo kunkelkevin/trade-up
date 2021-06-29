@@ -1,4 +1,84 @@
-# trade-up
+# TradeUp
+
+#### Table of Contents
+
+- [About](#About)
+- [Installation](#Installation)
+- [Usage](#Usage)
+- [Contribution](#Contribution)
+- [License](#License)
+
+# About
+
+TradeUp
+
+(Pitch Here)
+
+![]()
+![]()
+
+# Meet the Team
+
+![Alex Christenson - Routes and Event Listeners](https://github.com/christenson10)
+![Derrick Huggins - Models](https://github.com/dhuggins221)
+![Kevin Kunkel - Project Lead](https://github.com/kunkelkevin)
+![Ryan Armstrong - Front End/Handlebars](https://github.com/Rarmstrong45)
+
+# Installation
+
+(instructions here)
+
+# Usage
+
+(instructions here)
+
+##### Visual Studio Code
+
+(info here)
+
+##### GitHub/Git
+
+(info here)
+
+##### Node.js
+
+(info here)
+
+##### Express
+
+(info here)
+
+##### Sequelize
+
+(info here)
+
+##### Express handlebars
+
+(info here)
+
+##### Bcrypt
+
+(info here)
+
+###### Jest
+
+(info here)
+
+# Contribution
+
+Contribute to this project in any of the following ways
+
+- []()
+- []()
+- []()
+
+
+
+# License
+
+[]()
+
+# UserStory
 
 As a gamer, I want a platform where I am able to trade my old games with other players.
 
@@ -14,4 +94,6 @@ When I click on any current post I am presented with all the current offers and 
 
 When I click on my current offers, I am shown the original post, my offer, and any comments that have been made.  I am also shown if the original offer has been completed or if my offer has been accepted.
 
-When I click to add a new post then I am given a form to input the console type, title/description and to either upload or capture an image.  
+When I click to add a new post then I am given a form to input the console type, title/description and to either upload or capture an image.
+
+Have a quality README (with unique name, description, technologies used, screenshot, and link to deployed application).
