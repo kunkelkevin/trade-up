@@ -1,25 +1,59 @@
-  {{#if loggedIn}}
-           <form name="Console" id="console-home" action="/action_page.php">
-     Consoles: <select name="Consoles" id="Consoles">
-                    <option value="" selected="selected">Xbox</option>
-                    <option value="" selected="selected">Playstaytion</option>
-                    <option value="" selected="selected">Nintendo Switch</option>
-                    <option value="" selected="selected">Retro</option>
-                </select>
-        {{/if}}
-
-     <form class="new-post-form">
-    <div>
-      <label for="post-title">Title</label>
-      <input type="text" id="post-title" name="post-title" />
-    </div>
-    
-    <form class="comment-form">
+<form class="new-post-form">
+  <label for="consoles">Consoles: </label>
+  <select name="consoles" id="consoles">
+    <option value="Xbox" selected="selected">Xbox</option>
+    <option value="Playstation" selected="selected">Playstaytion</option>
+    <option value="Switch" selected="selected">Nintendo Switch</option>
+    <option value="Retro" selected="selected">Retro</option>
+  </select>
   <div>
-    <textarea name="comment-body"></textarea>
+    <label for="post-title">Title</label>
+    <input type="text" id="post-title" name="post-title" />
   </div>
 
-   <div>
+  <div>
+    <textarea name="post-description"></textarea>
+  </div>
+  <label for="quality">Quality: </label>
+  <select name="quality" id="quality">
+    <option value="1" selected="selected">new</option>
+    <option value="2" selected="selected">used</option>
+    <option value="3" selected="selected">damaged</option>
+  </select>
+
+  <div class="custom-file-container" data-upload-id="myUniqueUploadId">
+    <label>Upload File
+      <a
+        href="javascript:void(0)"
+        class="custom-file-container__image-clear"
+        title="Clear Image"
+      >&times;</a></label>
+    <label class="custom-file-container__custom-file">
+      <input
+        type="file"
+        class="custom-file-container__custom-file__custom-file-input"
+        accept="*"
+        multiple
+        aria-label="Choose File"
+      />
+      <input type="hidden" name="MAX_FILE_SIZE" value="10485760" />
+      <span
+        class="custom-file-container__custom-file__custom-file-control"
+      ></span>
+    </label>
+    <div class="custom-file-container__image-preview"></div>
+  </div>
+
+  <div>
     <button type="submit">submit</button>
   </div>
 </form>
+
+<script
+  src="https://unpkg.com/file-upload-with-preview@4.1.0/dist/file-upload-with-preview.min.js"
+></script>
+
+<script>
+  var upload = new FileUploadWithPreview('myUniqueUploadId')
+</script>
+<script src="/javascript/add-post.js"></script>

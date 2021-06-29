@@ -20,22 +20,21 @@
 </section>
 {{/if}}
 <div>
-  <a href="dashboard/create-trade" class="btn">
+  <a href="dashboard/create-trade" class="createTrade-Btn">
     Add New Trade
   </a>
 </div>
 
-{{#if posts.length}}
+{{#if offers.length}}
 <section>
   <h2>My Offers</h2>
   <ol>
-    {{#each offer as |offer|}}
+    {{#each offers as |post|}}
     <li>
-      {{> offer post}}
+      {{> post-info post}}
     </li>
     {{/each}}
   </ol>
 </section>
 {{/if}}
 
-<script src="/javascript/add-post.js"></script>

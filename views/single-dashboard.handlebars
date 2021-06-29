@@ -1,20 +1,39 @@
-<section>
-  {{#if selected}}
-    <ol>
-    {{#each offer as |offer|}}
-    <li>
-      {{> offer post}}
-    </li>
-    {{/each}}
-  </ol>
-  {{> comments post.comments}}
-  {{/if}}
-</section>
+{{> post-info post}}
+
+{{#if loggedIn}}
+{{#if offerMade}}
+<div>
+<h2>Offers</h2>
+{{#each offers}}
+</div>
+{{description}}
+{{> comments comments}}
+  <form class="comment-form" data-offer-id={{id}}>
+    <div>
+      <input type="text" id="comment-body"/>
+    </div>
+
+    <div>
+      <button type="submit" >add comment</button>
+    </div>
+  </form>
+{{/each}}
+
+{{/if}}
+{{/if}}
+
+
+
+
+{{#if loggedIn}}
+{{#if offerMade}}
+<script src="/javascript/comment.js"></script>
+{{/if}}
+{{/if}}
 
 
 
 
 
 
-
-<script src="/javascript/delete-trade.js"></script>
+{{!-- <script src="/javascript/delete-trade.js"></script> --}}

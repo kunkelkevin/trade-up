@@ -1,6 +1,6 @@
 const router = require("express").Router();
 const sequelize = require("../config/connection");
-const { Post, User, Comment } = require("../models");
+const { Post, User, Comment, Offer } = require("../models");
 const withAuth = require("../utils/auth");
 
 // get all posts for dashboard
@@ -8,9 +8,6 @@ router.get("/", withAuth, (req, res) => {
   console.log(req.session);
   console.log("======================");
   Post.findAll({
-    where: {
-      user_id: req.session.user_id,
-    },
     attributes: [
       "id",
       "console_type",
@@ -18,27 +15,28 @@ router.get("/", withAuth, (req, res) => {
       "title",
       "description",
       "quality",
+      "user_id",
       "createdAt",
     ],
     include: [
-      //   {
-      //     model: Offer,
-      //     attributes: ["id", "description"],
-      //     include: [
-      //       {
-      //         model: User,
-      //         attributes: ["username"],
-      //       },
-      //       {
-      //         model: Comment,
-      //         attributes: ["id", "comment_text"],
-      //         include: {
-      //           model: User,
-      //           attributes: ["username"],
-      //         },
-      //       },
-      //     ],
-      //   },
+      {
+        model: Offer,
+        attributes: ["id", "description", "user_id"],
+        include: [
+          {
+            model: User,
+            attributes: ["username"],
+          },
+          {
+            model: Comment,
+            attributes: ["id", "comment_text", "created_at"],
+            include: {
+              model: User,
+              attributes: ["username"],
+            },
+          },
+        ],
+      },
       {
         model: User,
         attributes: ["username"],
@@ -46,9 +44,21 @@ router.get("/", withAuth, (req, res) => {
     ],
   })
     .then((dbPostData) => {
-      const posts = dbPostData.map((post) => post.get({ plain: true }));
-      //   res.json(posts);
-      res.render("dashboard", { posts, loggedIn: true });
+      const allData = dbPostData.map((post) => post.get({ plain: true }));
+      const posts = allData.filter(
+        (data) => data.user_id === req.session.user_id
+      );
+      const offers = allData.filter((data) => {
+        for (let i = 0; i < data.offers.length; i++) {
+          console.log(data.offers[i], i);
+          if (data.offers[i].user_id === req.session.user_id) {
+            return true;
+          }
+        }
+        return false;
+      });
+      // res.json(offers);
+      res.render("dashboard", { posts, offers, loggedIn: true });
     })
     .catch((err) => {
       console.log(err);
