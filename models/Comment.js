@@ -25,7 +25,6 @@ Comment.init(
     },
     offer_id: {
       type: DataTypes.INTEGER,
-      allowNull: false,
       references: {
         model: "offer",
         key: "id",

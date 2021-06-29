@@ -67,12 +67,13 @@ router.get("/post/:id", (req, res) => {
       "title",
       "description",
       "quality",
+      "user_id",
       "createdAt",
     ],
     include: [
       {
         model: Offer,
-        attributes: ["id", "description"],
+        attributes: ["id", "description", "user_id"],
         include: [
           {
             model: User,
@@ -80,7 +81,7 @@ router.get("/post/:id", (req, res) => {
           },
           {
             model: Comment,
-            attributes: ["id", "comment_text"],
+            attributes: ["id", "comment_text", "created_at"],
             include: {
               model: User,
               attributes: ["username"],
@@ -100,20 +101,44 @@ router.get("/post/:id", (req, res) => {
         return;
       }
       const post = dbPostData.get({ plain: true });
-      let offerIndex = post.Offers.findIndex(
-        (user) => user.id === req.session.user_id
-      );
-      let offerMade = true;
-      if (offerIndex === -1) {
-        offerMade = false;
+      let offerMade = false;
+      let offerIndex = -1;
+      let offer = {};
+      let offers = [];
+      let offer_id = 0;
+      console.log(post.offers);
+      if (post.offers) {
+        offerIndex = post.offers.findIndex(
+          (user) => user.user_id === req.session.user_id
+        );
+        offer = post.offers[offerIndex];
+        offers = post.offers;
+        if (offer) {
+          offer_id = offer.id;
+        }
+        if (offerIndex !== -1) {
+          offerMade = true;
+        }
       }
       // res.json(post);
-      res.render("single-post", {
-        post,
-        loggedIn: req.session.loggedIn,
-        offerMade: offerMade,
-        offer: post.Offers[offerIndex],
-      });
+      if (post.user_id === req.session.user_id) {
+        console.log("this is what I want", offers);
+        res.render("single-dashboard", {
+          post,
+          loggedIn: req.session.loggedIn,
+          offerMade: offerMade,
+          offers: offers,
+        });
+      } else {
+        // res.json(offer);
+        res.render("single-post", {
+          post,
+          loggedIn: req.session.loggedIn,
+          offerMade: offerMade,
+          offer: offer,
+          encodedJson: encodeURIComponent(JSON.stringify(offer_id)),
+        });
+      }
     })
     .catch((err) => {
       console.log(err);
