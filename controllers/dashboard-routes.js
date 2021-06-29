@@ -56,4 +56,6 @@ router.get("/", withAuth, (req, res) => {
     });
 });
 
+router.get("/create-trade", withAuth, (req, res) => res.render("create-trade"));
+
 module.exports = router;

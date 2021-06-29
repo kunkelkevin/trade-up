@@ -13,13 +13,49 @@
       <label for="post-title">Title</label>
       <input type="text" id="post-title" name="post-title" />
     </div>
-    
+
     <form class="comment-form">
   <div>
     <textarea name="comment-body"></textarea>
   </div>
 
+  <form name="quality" id="quality-trade" action="/action_page.php">
+     Quality: <select name="quality" id="quality">
+                    <option value="" selected="selected">new</option>
+                    <option value="" selected="selected">used</option>
+                    <option value="" selected="selected">damaged</option>
+                </select>
+
+  <div class="custom-file-container" data-upload-id="myUniqueUploadId">
+    <label
+        >Upload File
+        <a
+            href="javascript:void(0)"
+            class="custom-file-container__image-clear"
+            title="Clear Image"
+            >&times;</a
+        ></label
+    >
+    <label class="custom-file-container__custom-file">
+        <input
+            type="file"
+            class="custom-file-container__custom-file__custom-file-input"
+            accept="*"
+            multiple
+            aria-label="Choose File"
+        />
+        <input type="hidden" name="MAX_FILE_SIZE" value="10485760" />
+        <span
+            class="custom-file-container__custom-file__custom-file-control"
+        ></span>
+    </label>
+    <div class="custom-file-container__image-preview"></div>
+</div>
+
    <div>
     <button type="submit">submit</button>
   </div>
 </form>
+
+
+
