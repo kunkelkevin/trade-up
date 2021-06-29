@@ -1,4 +1,5 @@
 <section>
+  {{#if selected}}
     <ol>
     {{#each offer as |offer|}}
     <li>
@@ -6,10 +7,12 @@
     </li>
     {{/each}}
   </ol>
+  {{> comments post.comments}}
+  {{/if}}
 </section>
-<div>
-<button type="button" class="delete-post-btn">Delete post</button>
-</div>
+
+
+
 
 
 

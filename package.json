@@ -13,7 +13,8 @@
     "express-session": "^1.17.2",
     "mysql2": "^2.2.5",
     "sequelize": "^6.6.2",
-    "webcam": "^3.2.1"
+    "webcam": "^3.2.1",
+    "webcam-easy": "^1.0.5"
   },
   "devDependencies": {},
   "scripts": {

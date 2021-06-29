@@ -1,0 +1,25 @@
+  {{#if loggedIn}}
+           <form name="Console" id="console-home" action="/action_page.php">
+     Consoles: <select name="Consoles" id="Consoles">
+                    <option value="" selected="selected">Xbox</option>
+                    <option value="" selected="selected">Playstaytion</option>
+                    <option value="" selected="selected">Nintendo Switch</option>
+                    <option value="" selected="selected">Retro</option>
+                </select>
+        {{/if}}
+
+     <form class="new-post-form">
+    <div>
+      <label for="post-title">Title</label>
+      <input type="text" id="post-title" name="post-title" />
+    </div>
+    
+    <form class="comment-form">
+  <div>
+    <textarea name="comment-body"></textarea>
+  </div>
+
+   <div>
+    <button type="submit">submit</button>
+  </div>
+</form>
