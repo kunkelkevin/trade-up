@@ -35,7 +35,7 @@ Offer.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: "Offer",
+    modelName: "offer",
   }
 );
 
