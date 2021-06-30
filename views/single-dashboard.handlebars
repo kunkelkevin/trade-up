@@ -1,7 +1,10 @@
+    <button type="button" class="delete-post-btn">Delete Trade</button>
 {{> post-info post}}
 
 {{#if loggedIn}}
-{{#if offerMade}}
+{{!-- {{#if offerMade}}
+{{#if offerPost}} --}}
+
 <div>
 <h2>Offers</h2>
 {{#each offers}}
@@ -20,7 +23,10 @@
 {{/each}}
 
 {{/if}}
-{{/if}}
+{{!-- {{/if}}
+{{/if}} --}}
+
+
 
 
 
@@ -31,7 +37,7 @@
 {{/if}}
 {{/if}}
 
-
+<script src="/javascript/delete-post.js"></script>
 
 
 
