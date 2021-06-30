@@ -3,7 +3,7 @@
 async function newFormHandler(event) {
   event.preventDefault();
   const console_type = document.querySelector("#consoles").value;
-  const pic_link = "";
+  const pic_link = "/img/test4.jpg";
   const title = document.querySelector('input[name="post-title"]').value;
   const description = document.querySelector(
     'textarea[name="post-description"]'
