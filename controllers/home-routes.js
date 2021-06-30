@@ -106,6 +106,7 @@ router.get("/post/:id", (req, res) => {
       let offer = {};
       let offers = [];
       let offer_id = 0;
+      let anyOffer = false;
       console.log(post.offers);
       if (post.offers) {
         offerIndex = post.offers.findIndex(
@@ -113,6 +114,9 @@ router.get("/post/:id", (req, res) => {
         );
         offer = post.offers[offerIndex];
         offers = post.offers;
+        if (offers.length > 0) {
+          anyOffer = true;
+        }
         if (offer) {
           offer_id = offer.id;
         }
@@ -126,7 +130,7 @@ router.get("/post/:id", (req, res) => {
         res.render("single-dashboard", {
           post,
           loggedIn: req.session.loggedIn,
-          offerMade: offerMade,
+          anyOffer: anyOffer,
           offers: offers,
         });
       } else {
