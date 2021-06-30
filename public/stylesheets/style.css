@@ -373,7 +373,33 @@ li::marker {
   inline-size: 500px;
 }
 
+.comment {
+  padding: 1%;
+  margin-bottom: 1%;
+  margin-left: 10px;
+  margin-top: 10px;
+  margin-right: 10px;
+  font-weight: bold;
+  font-family: 'Righteous', cursive;
+  text-indent: 15px;
+  opacity: 80%;
+  color: black;
+  align-content: space-around;
+}
 
+.comment:nth-child(odd) {
+  background-color: whitesmoke;
+}
+
+.comment:nth-child(even) {
+  background-color: lightgray;
+}
+
+.comment .meta {
+  font-size: 90%;
+  margin-bottom: .5%;
+  opacity: .6;
+}
 
 /* .comment-btn {
   background-color: #4CAF50; 
