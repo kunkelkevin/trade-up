@@ -5,8 +5,10 @@
 {{#if anyOffer}}
 <div>
 <h2>Offers</h2>
-{{#each offers}}
 </div>
+<div id=offer-area>
+{{#each offers}}
+
 {{description}}
 {{> comments comments}}
   <form class="comment-form" data-offer-id={{id}}>
@@ -19,7 +21,7 @@
     </div>
   </form>
 {{/each}}
-
+</div>
 {{/if}}
 {{/if}}
 

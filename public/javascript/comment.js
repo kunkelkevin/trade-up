@@ -1,7 +1,8 @@
 async function commentFormHandler(event) {
+  debugger;
   event.preventDefault();
-  console.log("We went to the form handler");
-  const comment_text = document.querySelector("#comment-body").value.trim();
+  console.log("We went to the form handler", event.target);
+  const comment_text = event.target.querySelector("#comment-body").value.trim();
   console.log(event.target);
   console.log(event.target.getAttribute("data-offer-id"));
   //   const offer_id = `{{offer.id}}`;
@@ -20,7 +21,7 @@ async function commentFormHandler(event) {
       headers: { "Content-Type": "application/json" },
     });
     if (response.ok) {
-      document.location.reload();
+      // document.location.reload();
     } else {
       alert(response.statusText);
     }
@@ -28,5 +29,5 @@ async function commentFormHandler(event) {
 }
 
 document
-  .querySelector(".comment-form")
+  .querySelector("#offer-area")
   .addEventListener("submit", commentFormHandler);
