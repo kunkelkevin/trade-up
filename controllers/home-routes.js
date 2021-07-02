@@ -107,7 +107,6 @@ router.get("/post/:id", (req, res) => {
       let offers = [];
       let offer_id = 0;
       let anyOffer = false;
-      console.log(post.offers);
       if (post.offers) {
         offerIndex = post.offers.findIndex(
           (user) => user.user_id === req.session.user_id
@@ -126,7 +125,6 @@ router.get("/post/:id", (req, res) => {
       }
       // res.json(post);
       if (post.user_id === req.session.user_id) {
-        console.log("this is what I want", offers);
         res.render("single-dashboard", {
           post,
           loggedIn: req.session.loggedIn,

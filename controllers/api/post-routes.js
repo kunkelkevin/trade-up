@@ -2,6 +2,14 @@ const router = require("express").Router();
 const sequelize = require("../../config/connection");
 const { Post, User, Offer, Comment } = require("../../models");
 const withAuth = require("../../utils/auth");
+const fs = require("fs");
+const cloudinary = require("cloudinary");
+
+cloudinary.config({
+  cloud_name: "sample",
+  api_key: "874837483274837",
+  api_secret: "a676b67565c6767a6767d6767f676fe1",
+});
 
 //get all
 router.get("/", (req, res) => {
@@ -102,6 +110,7 @@ router.get("/:id", (req, res) => {
 
 //post - pic link, title, description, user_id
 router.post("/", withAuth, (req, res) => {
+  const img = req.body.img;
   Post.create({
     pic_link: req.body.pic_link,
     title: req.body.title,
@@ -110,7 +119,20 @@ router.post("/", withAuth, (req, res) => {
     description: req.body.description,
     user_id: req.session.user_id,
   })
-    .then((dbPostData) => res.json(dbPostData))
+    .then((dbPostData) => {
+      fs.writeFile(
+        "./public/img/" + dbPostData.id + "." + dbPostData.pic_link,
+        Buffer.from(img, "base64"),
+        (err) => {
+          if (err) console.log(err);
+          else {
+            console.log("File written successfully");
+          }
+        }
+      );
+
+      res.json(dbPostData);
+    })
     .catch((err) => {
       console.log(err);
       res.status(500).json(err);
@@ -144,7 +166,6 @@ router.put("/:id", withAuth, (req, res) => {
 
 //delete by id
 router.delete("/:id", (req, res) => {
-  console.log("id", req.params.id);
   Post.destroy({
     where: {
       id: req.params.id,

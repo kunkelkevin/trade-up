@@ -50,7 +50,6 @@ router.get("/", withAuth, (req, res) => {
       );
       const offers = allData.filter((data) => {
         for (let i = 0; i < data.offers.length; i++) {
-          console.log(data.offers[i], i);
           if (data.offers[i].user_id === req.session.user_id) {
             return true;
           }
