@@ -56,7 +56,6 @@ router.get("/", withAuth, (req, res) => {
         }
         return false;
       });
-      // res.json(offers);
       res.render("dashboard", { posts, offers, loggedIn: true });
     })
     .catch((err) => {
@@ -65,6 +64,8 @@ router.get("/", withAuth, (req, res) => {
     });
 });
 
-router.get("/create-trade", withAuth, (req, res) => res.render("create-trade"));
+router.get("/create-trade", withAuth, (req, res) =>
+  res.render("create-trade", { loggedIn: req.session.loggedIn })
+);
 
 module.exports = router;

@@ -7,7 +7,7 @@
     </div>
     {{offer.description}}
     {{> comments offer.comments}}
-      <form class="comment-form" data-offer-id={{offer.id}}>
+      <form class="comment-form" id="offer-area" data-offer-id={{offer.id}}>
         <div>
           <input type="text" id="comment-body"/>
         </div>
@@ -22,7 +22,7 @@
     <h2>Create Offer</h2>
     </div>
 
-    <form class="offer-form">
+    <form class="offer-form" >
       <div>
         <textarea name="trade-body"></textarea>
       </div>
