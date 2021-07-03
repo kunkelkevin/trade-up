@@ -1,15 +1,6 @@
 {{#if posts.length}}
 <section>
   <h2>My Trades</h2>
-      {{#if loggedIn}}
-           <form name="Console" id="console-home" action="/action_page.php">
-     Consoles: <select name="Consoles" id="Consoles">
-                    <option value="" selected="selected">Xbox</option>
-                    <option value="" selected="selected">Playstaytion</option>
-                    <option value="" selected="selected">Nintendo Switch</option>
-                    <option value="" selected="selected">Retro</option>
-                </select>
-        {{/if}}
   <ol>
     {{#each posts as |post|}}
     <li>

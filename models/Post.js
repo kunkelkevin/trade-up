@@ -30,11 +30,7 @@ Post.init(
       allowNull: false,
     },
     quality: {
-      type: DataTypes.INTEGER,
-      validate: {
-        //number needs to be between 1-5
-        len: [1, 5],
-      },
+      type: DataTypes.STRING,
       allowNull: false,
     },
     user_id: {

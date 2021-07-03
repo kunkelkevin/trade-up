@@ -17,9 +17,9 @@
   </div>
   <label for="quality">Quality: </label>
   <select name="quality" id="quality">
-    <option value="1" selected="selected">new</option>
-    <option value="2" selected="selected">used</option>
-    <option value="3" selected="selected">damaged</option>
+    <option value="New" selected="selected">new</option>
+    <option value="Used" selected="selected">used</option>
+    <option value="Damaged" selected="selected">damaged</option>
   </select>
 
   <div class="custom-file-container" data-upload-id="myUniqueUploadId">
@@ -34,8 +34,7 @@
         type="file"
         class="custom-file-container__custom-file__custom-file-input"
         id="post_img"
-        accept="*"
-        multiple
+        accept="img/*"
         aria-label="Choose File"
       />
       <input type="hidden" name="MAX_FILE_SIZE" value="10485760" />

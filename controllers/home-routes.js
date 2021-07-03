@@ -42,7 +42,6 @@ router.get("/", (req, res) => {
   })
     .then((dbPostData) => {
       const posts = dbPostData.map((post) => post.get({ plain: true }));
-      // res.json(posts);
       res.render("homepage", {
         posts,
         loggedIn: req.session.loggedIn,
@@ -123,7 +122,6 @@ router.get("/post/:id", (req, res) => {
           offerMade = true;
         }
       }
-      // res.json(post);
       if (post.user_id === req.session.user_id) {
         res.render("single-dashboard", {
           post,
@@ -132,7 +130,6 @@ router.get("/post/:id", (req, res) => {
           offers: offers,
         });
       } else {
-        // res.json(offer);
         res.render("single-post", {
           post,
           loggedIn: req.session.loggedIn,

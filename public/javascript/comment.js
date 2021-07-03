@@ -1,15 +1,7 @@
 async function commentFormHandler(event) {
-  debugger;
   event.preventDefault();
-  console.log("We went to the form handler", event.target);
   const comment_text = event.target.querySelector("#comment-body").value.trim();
-  console.log(event.target);
-  console.log(event.target.getAttribute("data-offer-id"));
-  //   const offer_id = `{{offer.id}}`;
-  // if (event.target.getAttribute("data-offer-id")) {
   const offer_id = parseInt(event.target.getAttribute("data-offer-id"));
-  // }
-  console.log(comment_text, offer_id);
 
   if (comment_text) {
     const response = await fetch("/api/comments", {
@@ -21,7 +13,7 @@ async function commentFormHandler(event) {
       headers: { "Content-Type": "application/json" },
     });
     if (response.ok) {
-      // document.location.reload();
+      document.location.reload();
     } else {
       alert(response.statusText);
     }
