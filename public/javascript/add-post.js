@@ -6,7 +6,6 @@ async function newFormHandler(event) {
     'textarea[name="post-description"]'
   ).value;
   const quality = document.querySelector("#quality").value;
-  console.log(quality);
   const imgPath = document.querySelector("#post_img").value.split(".");
   const pic_link = imgPath[imgPath.length - 1];
   const filereader = new FileReader();
@@ -29,7 +28,7 @@ async function newFormHandler(event) {
         },
       }).then((response) => {
         if (response.ok) {
-          // document.location.replace("/dashboard");
+          document.location.replace("/dashboard");
         } else {
           alert(response.statusText);
         }
