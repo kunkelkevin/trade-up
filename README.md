@@ -33,6 +33,15 @@ Then the program should be available to execute with "node server.js" or "npm st
 
 ## Usage
 
+The Trade Up website is a full stack project that incorporates the following technolies:
+ * bcrypt
+ * dotenv
+ * sequelize
+ * mysql2
+ * express
+ * handlebars
+ * file-upload-with-preview
+
 The website's landing page will show any existing posting as seen in the following image:<br />
 ![Main Page](/img/Screenshot-main-page.png "TradeUp Home Page")
 
