@@ -5,7 +5,7 @@ async function newFormHandler(event) {
   const description = document.querySelector(
     'textarea[name="post-description"]'
   ).value;
-  const quality = parseInt(document.querySelector("#quality").value);
+  const quality = document.querySelector("#quality").value;
   const imgPath = document.querySelector("#post_img").value.split(".");
   const pic_link = imgPath[imgPath.length - 1];
   const filereader = new FileReader();

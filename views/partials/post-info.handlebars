@@ -1,24 +1,19 @@
 <article class="post">
-  <div class="container">
-    <a href="/post/{{id}}">
-    <div class="system" id="post-system">
-      <span>{{console_type}}</Span>
+  <a href="/post/{{id}}"></a>
+    <div class="container">
+      <div class="system" id="post-system">
+        <span>{{console_type}}</span>
+      </div>
+      <div class="trade-img">
+        <img class="tradePic" src="/img/{{id}}.{{pic_link}}" />
+      </div>
+      <div class="description">
+        <p> {{title}}</p>
+        <p> {{description}}</p>
+      </div>
+      <div class="quality">
+        <p>{{quality}}</p>
+      </div>
     </div>
-    <div class="trade-img">
-          <img class="tradePic" src="/img/{{id}}.{{pic_link}}"> 
-    </div>
-    <div class = "description">
-      <p> {{title}}</p>
-      <p> {{description}}</p>
-    </div>
-    <div class = "quality">
-      <P>{{quality}}</P>
-    </div>
-    {{!-- </div>
-   <div class="meta">
-    <a href="/comment/{{id}}">{{comment.length}} {{format_plural "comment" comment-body.length}}</a>
-  </div>
-    </div> --}}
-    </div>
-    </a>
-  </article>
+  </a>
+</article>
