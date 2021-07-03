@@ -1,78 +1,48 @@
 {{> post-info post}}
 
 {{#if loggedIn}}
-{{#if offerMade}}
-<div>
-<h2>My Offers</h2>
-</div>
-{{offer.description}}
-{{> comments offer.comments}}
-  <form class="comment-form" data-offer-id={{offer.id}}>
+  {{#if offerMade}}
     <div>
-      <input type="text" id="comment-body"/>
+      <h2>My Offers</h2>
+    </div>
+    {{offer.description}}
+    {{> comments offer.comments}}
+      <form class="comment-form" data-offer-id={{offer.id}}>
+        <div>
+          <input type="text" id="comment-body"/>
+        </div>
+
+        <div>
+          <button class="submit-btn" type="submit">add comment</button>
+        </div>
+      </form>
+
+  {{else}}
+    <div>
+    <h2>Create Offer</h2>
     </div>
 
-    <div>
-      <button class="submit-btn" type="submit">add comment</button>
-    </div>
-  </form>
+    <form class="offer-form">
+      <div>
+        <textarea name="trade-body"></textarea>
+      </div>
 
-{{else}}
-<div>
-<h2>Create Offer</h2>
-</div>
-
-<form class="offer-form">
-  <div>
-    <textarea name="trade-body"></textarea>
-  </div>
-
-   <div>
-    <button class="submit-btn" type="submit">submit offer</button>
-  </div>
-</form>
-
-  {{!-- <form class="comment-form">
-  <div>
-    <textarea name="comment-body"></textarea>
-  </div>
-
-  <div>
-    <button type="submit">add trade</button>
-  </div>
-</form> --}}
-{{!-- {{/if}} --}}
+      <div>
+        <button class="submit-btn" type="submit">submit offer</button>
+      </div>
+    </form>
+  {{/if}}
 {{/if}}
-{{/if}}
-{{!-- {{#if loggedIn}}
-<div class="my-offer">
-  <h2>
-    My Offers
-  </h2>
-</div>
-<section>
-  <a href="/single-dashboard">
-    <ol>
-    {{#each offer as |offer|}}
-    <li>
-      {{> post-info post}}
-    </li>
-    {{/each}}
-  </ol>
-  </a>
-</section>
-{{/if}} --}}
-
 
 
 {{#if loggedIn}}
-{{#if offerMade}}
-<script>
-  const decodedJson = decodeURIComponent("{{{encodedJson}}}");
-  const offer_id = JSON.parse(decodedJson);
-</script>
-<script src="/javascript/comment.js"></script>
-{{else}}
-<script src="/javascript/offer.js"></script>
-{{/if}}
+  {{#if offerMade}}
+    <script>
+      const decodedJson = decodeURIComponent("{{{encodedJson}}}");
+      const offer_id = JSON.parse(decodedJson);
+    </script>
+    <script src="/javascript/comment.js"></script>
+  {{else}}
+    <script src="/javascript/offer.js"></script>
+  {{/if}}
 {{/if}}

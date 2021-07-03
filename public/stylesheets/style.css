@@ -332,6 +332,7 @@ footer {
   vertical-align: middle;
   font-weight: bold;
   font-family: "Righteous", cursive;
+  width: 100%;
   max-width: 100%;
   border: 0.5px solid black;
   box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
@@ -372,18 +373,6 @@ li::marker {
   word-wrap: normal;
   inline-size: 500px;
 }
-
-/* .comment-btn {
-  background-color: #4CAF50; 
-  border: none;
-  color: white;
-  padding: 5px 13px;
-  text-align: center;
-  text-decoration: none;
-
-  font-size: 16px;
-  
-} */
 
 /* 
 
@@ -707,6 +696,11 @@ body {
     max-width: max-content;
     max-height: max-content;
     margin: 0 auto;
+  }
+
+  .delete-post-btn {
+    width: 80%;
+    margin: 0 10%;
   }
 
   .post-list {

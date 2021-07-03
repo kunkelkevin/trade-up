@@ -31,10 +31,6 @@ Post.init(
     },
     quality: {
       type: DataTypes.STRING,
-      validate: {
-        //number needs to be between 1-5
-        len: [1, 5],
-      },
       allowNull: false,
     },
     user_id: {
